@@ -1,0 +1,44 @@
+Enter password: ***********
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 17
+Server version: 8.0.30 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2022, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databases;
++--------------------------+
+| Database                 |
++--------------------------+
+| employee_payroll_service |
+| information_schema       |
+| mysql                    |
+| performance_schema       |
+| sys                      |
++--------------------------+
+5 rows in set (0.05 sec)
+
+mysql> use employee_payroll_service;
+Database changed
+mysql> create table employee_payroll_service(ID int not null auto_increment, Name varchar(30) not null, Salary double not null, Start Date not null, primary key(id));
+Query OK, 0 rows affected (0.17 sec)
+
+mysql> desc employee_payroll_service;
++--------+-------------+------+-----+---------+----------------+
+| Field  | Type        | Null | Key | Default | Extra          |
++--------+-------------+------+-----+---------+----------------+
+| ID     | int         | NO   | PRI | NULL    | auto_increment |
+| Name   | varchar(30) | NO   |     | NULL    |                |
+| Salary | double      | NO   |     | NULL    |                |
+| Start  | date        | NO   |     | NULL    |                |
++--------+-------------+------+-----+---------+----------------+
+4 rows in set (0.06 sec)
+
+mysql> insert into employee_payroll_service(Name, Salary,Start) values ('Nikhil', 400000.00, '2004-09-04'), ('Pranav', 200000.00, '2012-02-11'),('Sankalp', 425000.00, '2015-07-11');
+Query OK, 3 rows affected (0.02 sec)
+Records: 3  Duplicates: 0  Warnings: 0
